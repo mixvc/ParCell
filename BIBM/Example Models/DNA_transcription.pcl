@@ -1,0 +1,66 @@
+begin model
+
+# Parameter block
+begin parameter
+
+b     20                 # Burst factor
+
+k1    0.01               # Transcription of DNA into RNA
+k2    0.00577            # Degradation of mRNA
+k3    k2*b               # Translation of RNA into protein P
+k4    0.0001925          # production of mRNA
+
+end parameter
+
+# Species block
+begin species
+
+DNA
+mRNA
+P
+
+end species
+
+# Initial condition block
+begin initial condition
+
+DNA  1
+
+end initial condition
+
+# Reaction rules block
+begin reaction rules
+
+# 1. Transcription of DNA into mRNA
+DNA -> DNA + mRNA           $ k1    $$ (constant)
+
+# 2. Degradation of mRNA
+mRNA ->                     $ k2       $$ (constant)
+
+# 3. Translation mRNA into protein P
+mRNA -> mRNA + P            $ k3       $$ (constant)
+
+# 4. Degradation of protein P
+P ->                        $ k4       $$ (constant)
+ 
+end reaction rules
+
+end model
+
+simulate(N = 20, T = 3000, cores = 4, grain = 1, grainWrite = 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

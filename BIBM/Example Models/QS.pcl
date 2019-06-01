@@ -1,0 +1,128 @@
+begin model
+
+# Parameter block
+begin parameter
+
+dI        0.027      # Degradation of LuxI
+f(x3,t)   218.98     # Protein expression of LuxI 
+dR        0.156      # Degradation rate of LuxR
+ttLuxR    76.12      # Protein expression rate of LuxR
+kf1       0.1        # Association constant of LuxR and AHL(IC)
+kr1       10         # Unbinding rate of of LuxR.AHL(IC)
+dc        0.017      # Degradation rate of (LuxR.AHL(IC))2
+kf2       0.05       # Dimerization rate of LuxR.AHL(IC) 
+kr2       1          # Dissociation rate of dimer (LuxR.AHL(IC))2
+dA        0.057      # Degradation rate of internal AHL(IC)
+kA        0.04       # Synthesis rate of AHL(IC) by LuxI
+D         2          # Diffusion rate of internal AHL(IC)  
+DVC       2.2e-6     # Diffusion rate of external AHL(EC)
+dAe       0.04       # Degradation rate of external AHL(EC)
+
+end parameter
+
+# Species block
+begin species
+
+LuxI
+LuxR
+(LuxR.AHL(IC))2
+AHL(IC)
+LuxR.AHL(IC)
+AHL(EC)
+
+end species
+
+# Initial condition block
+begin initial condition
+
+(LuxR.AHL(IC))2  10
+
+end initial condition
+
+# Reaction rules block
+begin reaction rules
+
+#1. degradation of LuxI
+
+LuxI  ->               $ dI         $$ (constant)
+
+#2. Production of LuxI
+
+      ->   LuxI        $ f(x3,t)    $$ (constant)    $$$ DRR1
+
+#3. Degradation of LuxR
+
+LuxR    ->             $ dR         $$ (constant)   
+
+#4. Production of LuxI
+
+        ->  LuxR       $ ttLuxR     $$ (constant)   
+
+#5. Association of LuxR and AHL(IC)
+
+LuxR + AHL(IC)   ->   LuxR.AHL(IC)       $ kf1     $$ (constant)  
+
+#6. Dissociation of LuxR and AHL(IC)
+
+LuxR.AHL(IC)      ->   LuxR + AHL(IC)    $ kr1     $$  (constant)  
+
+#7. Degradation of (LuxR.AHL(IC))2
+
+(LuxR.AHL(IC))2  ->                      $ dc      $$ (constant)
+
+#8. Dimerization of LuxR.AHL(IC)
+
+LuxR.AHL(IC) + LuxR.AHL(IC) -> (LuxR.AHL(IC))2  $ kf2  $$ (constant)
+
+#9. Dissociation of (LuxR.AHL)2
+
+(LuxR.AHL(IC))2 -> LuxR.AHL(IC) + LuxR.AHL(IC)  $ kr2  $$ (constant)
+
+#10. Degradation of autoinducer
+
+AHL(IC)      ->                          $ dA       $$ (constant)
+
+#11. Synthesis of AHL(IC)
+
+LuxI     ->     LuxI  +  AHL(IC)         $ kA       $$ (constant)
+
+#12. Diffusion of AHL(IC) from cell to environment
+ 
+AHL(IC)      ->     AHL(EC)              $ D        $$ (constant)
+
+#13. Diffusion of AHL(EC) from environment to cell 
+
+AHL(EC)  ->    AHL(IC)                   $ DVC      $$ (constant)
+
+#14. Degradation of AHL(EC)
+
+AHL(EC)   ->                             $ dAe      $$ (constant)
+
+end reaction rules
+
+#Dependent reaction block
+begin dependent reaction rules
+
+[DRR1] *= ((100 + 0.01 * moleculeA[(LuxR.AHL(IC))2]) / (100 + moleculeA[(LuxR.AHL(IC))2]))
+
+end dependent reaction rules
+
+
+#Environmental species block
+begin environmental species
+
+AHL(EC)
+
+end environmental species
+
+end model
+
+
+simulate(N = 20, T = 200, cores = 8 meanDivisionTime = 45)
+
+
+
+
+
+
+

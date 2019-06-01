@@ -1,0 +1,16 @@
+('/mnt/dfs/mixvc/Users/mixvc/Desktop/GUI/build/gui/setuptools-18.1-py3.5.egg',
+ None,
+ {'*.abi3.so',
+  '*.cpython-35m-x86_64-linux-gnu.so',
+  '*.py',
+  '*.pyc',
+  '*.so',
+  'EGG-INFO'},
+ 'DATA',
+ [('setuptools/script (dev).tmpl',
+   '/mnt/dfs/mixvc/Users/mixvc/Desktop/GUI/build/gui/setuptools-18.1-py3.5.egg/setuptools/script '
+   '(dev).tmpl',
+   'DATA'),
+  ('setuptools/script.tmpl',
+   '/mnt/dfs/mixvc/Users/mixvc/Desktop/GUI/build/gui/setuptools-18.1-py3.5.egg/setuptools/script.tmpl',
+   'DATA')])

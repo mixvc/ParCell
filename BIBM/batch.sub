@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --job-name=Change_ME
+#SBATCH --ntasks=50
+#SBATCH --nodes=4
+#SBATCH --time=0-100:00:00
+#SBATCH --mail-type=begin,end,fail,requeue
+#SBATCH --export=all
+#SBATCH --out=Forge-%j.out
+
+python Main.py
+
+echo "DONE."
+
+

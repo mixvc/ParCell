@@ -1,0 +1,8 @@
+plotter([moleculeA['P']], ['Protein P'])
+# plotterA([moleculeA['P']], ['Protein P'])
+# plotter([moleculeA['DNA'], moleculeA['mRNA']], ['DNA', 'mRNA'])
+# plotterA([moleculeA['DNA'], moleculeA['mRNA']], ['DNA', 'mRNA'])
+
+# plotter([moleculeA['E'], moleculeA['S'], moleculeA['ES'], moleculeA['P']], ['E', 'S', 'ES', 'P'])
+# plotterA([moleculeA['E'], moleculeA['S'], moleculeA['ES'], moleculeA['P']], ['E', 'S', 'ES', 'P'])
+#plotterA([moleculeA['LuxI'], moleculeA['LuxR'], moleculeA['AHL(EC)']], ['LuxI', 'LuxR', 'Extracellular AHL'])

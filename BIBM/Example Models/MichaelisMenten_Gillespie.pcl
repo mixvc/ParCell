@@ -1,0 +1,62 @@
+begin model
+
+# Parameter block
+begin parameter
+
+kf      1e-5
+kr      0.1
+kp      0.05
+
+end parameter
+
+# Species block
+begin species
+
+E
+S
+ES
+P
+
+end species
+
+# Initial condition block
+begin initial condition
+
+E     5e3
+S     1e4
+
+end initial condition
+
+# Reaction rules block
+begin reaction rules
+
+E + S -> ES        $ kf           $$ (constant)
+
+ES -> E + S        $ kr           $$ (constant)
+
+ES -> P + E        $ kp           $$ (constant)
+
+end reaction rules
+
+
+end model
+
+simulate(N = 20, T = 400)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 [//]: # (Image References)
-[image1]: ./image/Schematic1.PNG
-[image2]: ./image/Schematic2.PNG
-[image3]: ./image/Schematic3.PNG
+[image1]: ./image/Schematic1.png
+[image2]: ./image/Schematic2.png
+[image3]: ./image/Schematic3.png
 
 # ParCell
 ParCell: A Parallel Cell Population Modeling Software

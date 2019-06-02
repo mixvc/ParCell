@@ -8,11 +8,11 @@ ParCell: A Parallel Cell Population Modeling Software
 
 ParCell can simulate a cell population from single cell biochemical reactions and their environment (extracellular domain).
 
+Documentation of Parcell is included in the file "Documentation ParCell.pdf".
+
 ![alt text][image1]
 
 ![alt text][image2]
-
-Documentation of Parcell is included in the file "Documentation ParCell.pdf".
 
 ![alt text][image3]
 

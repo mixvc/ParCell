@@ -19,7 +19,7 @@ Schematic diagram of the population modeling framework. The framework uses MPI p
 
 # Steps in parallel framework
 
-The virtual master process takes 3 inputs: reaction rules ($R_r$), environment and constant ($R_c$). (1) The master spawns several parallel processes. Here, each cell is modeled as a memoryless process, termed \textit{cell process}. In a large scale system several cell processes are assigned to a single core. (2) In each time intervals, master sends molecular concentration and environment information to each cell process and invokes Gillespie Algorithm. (3) Each cell process runs the Gillespie algorithm locally and (4) returns the updated molecular concentration to the master. Following this, the master node (5) updates environment variable, (6) population dynamics and (7) global time, before returning to first step. This cycle continues until simulation duration is reached.
+The virtual master process takes 3 inputs: reaction rules, environment and constant. (1) The master spawns several parallel processes. Here, each cell is modeled as a memoryless process, termed \textit{cell process}. In a large scale system several cell processes are assigned to a single core. (2) In each time intervals, master sends molecular concentration and environment information to each cell process and invokes Gillespie Algorithm. (3) Each cell process runs the Gillespie algorithm locally and (4) returns the updated molecular concentration to the master. Following this, the master node (5) updates environment variable, (6) population dynamics and (7) global time, before returning to first step. This cycle continues until simulation duration is reached.
 
 ![alt text][image3]
 

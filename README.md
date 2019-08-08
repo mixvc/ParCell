@@ -4,11 +4,11 @@
 [image3]: ./image/Schematic3.png
 
 # ParCell
-ParCell: A Parallel Cell Population Modeling Software
+### ParCell: A Parallel Cell Population Modeling Software
 
 ParCell can simulate a cell population from single cell biochemical reactions and their environment (extracellular domain).
 
-Documentation of Parcell is included in the file "Documentation ParCell.pdf".
+**Documentation of Parcell is included in the file "Documentation ParCell.pdf".**
 
 ![alt text][image1]
 
@@ -25,7 +25,9 @@ The virtual master process takes 3 inputs: reaction rules, environment and const
 
 Schematic diagram of ParCell software.
 
-This software is based on a published paper:
+**This software is based on a published papers:**
 
 Islam, Mohammad, et al. "Multicellular Models Bridging Intracellular Signaling and Gene Transcription to Population Dynamics." Processes 6.11 (2018): 217.
+
+Roy, Satyaki, and Islam, Mohammad, et al. "A Scalable Parallel Framework for Multicellular Communication in Bacterial Quorum Sensing." In International Conference on Bio-inspired Information and Communication, pp. 181-194. Springer, Cham, 2019.
 

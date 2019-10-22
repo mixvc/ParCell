@@ -17,7 +17,7 @@ def read_dictionary_from_file(fname):
     f.close()
     return moleculeA
 
-np.set_printoptions(threshold=np.nan)
+#np.set_printoptions(threshold=np.nan)
 
 
 def plotter(moleculeOfInterest):
